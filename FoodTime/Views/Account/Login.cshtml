@@ -1,0 +1,35 @@
+﻿@using FoodTime.Domain.ViewModels
+@model LoginViewModel
+@{
+    ViewData["Title"] = "Մուտք";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <h2>Մուտք</h2>
+        <form asp-controller="Account" asp-action="Login" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserName"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Մուտք</button>
+        </form>
+
+        <p class="mt-3">
+            Դեռ գրանցված չե՞ք: <a asp-controller="Account" asp-action="Register">Գրանցվել</a>
+        </p>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

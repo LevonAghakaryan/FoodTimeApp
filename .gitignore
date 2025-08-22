@@ -1,0 +1,21 @@
+# Visual Studio / .NET
+[Bb]in/
+[Oo]bj/
+.vs/
+.vs-code-files/
+*.user
+*.suo
+*.sln.docstates
+_ReSharper*/
+
+# Packages
+packages/
+node_modules/
+
+# OS and temporary files
+[Tt]humbs.db
+
+# Configuration Files
+appsettings.json
+appsettings.Development.json
+secrets.json

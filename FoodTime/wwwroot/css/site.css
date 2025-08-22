@@ -1,0 +1,125 @@
+﻿/* --- Ընդհանուր ոճեր --- */
+html {
+    font-size: 16px;
+}
+
+body {
+    /* ❗️ Օգտագործում ենք ձեր 2-րդ նկարը որպես ընդհանուր ֆոն */
+    background-image: url('../Images/fon-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1; /* Հիմնական մասը զբաղեցնում է ամբողջ ազատ տարածքը */
+}
+
+
+/* --- Header և Footer (նոր ոճ) --- */
+.main-header, .main-footer {
+    background-color: #2c2c2c; /* Մուգ մոխրագույն ֆոն */
+    padding: 1rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Նուրբ ստվեր՝ խորության համար */
+}
+
+.navbar-brand {
+    color: #D4AF37; /* Ոսկեգույն */
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+    .navbar-brand:hover {
+        color: #f0e68c; /* Բաց ոսկեգույն */
+    }
+
+.nav-link {
+    color: #e0e0e0;
+    font-weight: 500;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+    .nav-link:hover, .nav-link.active {
+        color: #D4AF37; /* Ոսկեգույն՝ hover-ի ժամանակ */
+    }
+
+.main-footer {
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: auto; /* Հրում է footer-ը էջի ներքև */
+    border-top: 1px solid #444; /* Վերևի գիծ՝ բաժանելու համար */
+}
+
+/* --- Գլխավոր Էջի Նոր Ոճ --- */
+
+/* Կոնտեյներ, որը կենտրոնացնում է նկարը էջի մեջտեղում */
+.showcase-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 1rem; /* Հեռավորություն header-ից և եզրերից */
+    width: 100%;
+    flex-grow: 1;
+}
+
+/* Նկարի կոնտեյները, որի նկատմամբ դիրքավորվելու է տեքստը */
+.image-container {
+    position: relative; /* Սա կարևոր է overlay-ի համար */
+    max-width: 100%;
+}
+
+/* Ձեր սուրճի նկարի ոճը */
+.main-showcase-image {
+    display: block; /* Խուսափում ենք նկարի տակի փոքր բացատից */
+    max-width: 100%; /* Նկարը չի անցնի իր կոնտեյների սահմանները */
+    height: auto; /* Պահպանում է նկարի համաչափությունը */
+    border-radius: 8px; /* Մի փոքր կլորացնում ենք անկյունները */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Գեղեցիկ ստվեր */
+}
+
+/* Տեքստի բլոկը, որը գտնվում է նկարի վրա */
+.overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Կենտրոնացնում է բլոկը իդեալական */
+    width: 90%;
+    text-align: center;
+}
+
+/* Գլխավոր վերնագրի ոճը */
+.hero-title {
+    font-family: 'Lora', serif;
+    font-size: 3rem; /* Մի փոքր փոքրացրել ենք, որ տեղավորվի */
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+    /* Շատ կարևոր է՝ տեքստի տակ ստվեր, որպեսզի այն լավ ընթերցվի նկարի վրա */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+/* Կոճակի ոճը (մնում է նույնը) */
+.btn-order-now {
+    border: 2px solid #D4AF37;
+    color: #D4AF37;
+    background-color: rgba(0, 0, 0, 0.3); /* Թեթև կիսաթափանցիկ ֆոն */
+    padding: 0.75rem 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 2rem;
+    transition: all 0.3s ease;
+}
+
+    .btn-order-now:hover {
+        background-color: #D4AF37;
+        color: #1a1a1a;
+    }

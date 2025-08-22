@@ -1,0 +1,102 @@
+﻿/* Product Ցանկի Կոնտեյների Ոճ */
+.product-list-container {
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 2rem;
+}
+
+.products-title {
+    color: #D4AF37;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Պրոդուկտի Քարտի Ոճ */
+.product-card {
+    border: 1px solid #444;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #2c2c2c;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    color: #e0e0e0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Հորիզոնական կենտրոնացում */
+}
+
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+    }
+
+.product-image {
+    width: 80%;
+    height: 200px;
+    object-fit: contain;
+    display: block;
+    margin-top: 1rem;
+}
+
+.product-info {
+    padding: 1.2rem;
+    text-align: center;
+    padding-top: 1.5rem;
+}
+
+.product-name {
+    font-weight: bold;
+    color: #D4AF37;
+    font-size: 1.4rem;
+    margin-bottom: 0.7rem;
+}
+
+.product-description {
+    font-size: 0.9rem;
+    color: #ccc;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.product-price {
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: bold;
+    margin-top: 0.7rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-stock {
+    font-size: 0.9rem;
+    color: #aaa;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* Նոր ոճեր՝ քանակի դաշտի և կոճակի համար */
+.quantity-input {
+    width: 60px; /* Քանակի դաշտի լայնությունը */
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.btn-add-to-cart {
+    background-color: #28a745 !important; /* Կանաչ գույն */
+    border: 1px solid #28a745 !important; /* Շրջանակը նույն գույնով */
+    color: #fff !important; /* Սպիտակ տեքստ */
+    font-size: 0.9rem !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 5px !important;
+}
+
+    .btn-add-to-cart:hover {
+        background-color: #218838 !important;
+        border-color: #218838 !important;
+    }

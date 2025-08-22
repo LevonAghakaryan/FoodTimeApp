@@ -1,0 +1,51 @@
+﻿@model List<FoodTime.Domain.Entity.Product>
+
+@{
+    ViewData["Title"] = "Զամբյուղ";
+}
+
+<div class="container">
+    <h2>Ձեր զամբյուղը</h2>
+
+    @if (Model != null && Model.Any())
+    {
+        <table class="table table-bordered table-dark">
+            <thead>
+                <tr>
+                    <th>Անուն</th>
+                    <th>Քանակ</th>
+                    <th>Գին</th>
+                    <th>Ընդհանուր</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    decimal total = 0;
+                }
+                @foreach (var item in Model)
+                {
+                    decimal subtotal = item.Price * item.Stock;
+                    total += subtotal;
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Stock</td>
+                        <td>@item.Price դրամ</td>
+                        <td>@subtotal դրամ</td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3" class="text-right">**Ընդհանուր գումար:**</td>
+                    <td>**@total դրամ**</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <a asp-controller="Order" asp-action="Checkout" class="btn btn-success mt-3">Վճարել</a>
+    }
+    else
+    {
+        <p>Ձեր զամբյուղը դատարկ է։</p>
+    }
+</div>

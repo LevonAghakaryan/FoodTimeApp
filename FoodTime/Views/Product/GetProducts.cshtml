@@ -1,0 +1,42 @@
+﻿@model FoodTime.Domain.Response.IBaseResponse<IEnumerable<FoodTime.Domain.Entity.Product>>
+
+@{
+    ViewData["Title"] = "Մեր Ապրանքները";
+}
+<link rel="stylesheet" href="~/css/products.css" asp-append-version="true" />
+
+<div class="container product-list-container">
+    <h1 class="products-title">Մեր Ապրանքները</h1>
+
+    @if (Model != null && Model.Data != null && Model.Data.Any())
+    {
+        <div class="row justify-content-center">
+            @foreach (var product in Model.Data)
+            {
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="product-card">
+                        <img src="@product.ImageUrl" alt="@product.Name" class="product-image">
+                        <div class="product-info">
+                            <h5 class="product-name">@product.Name</h5>
+                            <p class="product-description">@product.Description</p>
+                            <p class="product-price">Գինը: @product.Price դրամ</p>
+                            <p class="product-stock">Առկա է: @product.Stock</p>
+
+                            <form asp-controller="Cart" asp-action="AddToCart" method="post" class="d-flex align-items-center">
+                                <input type="hidden" name="productId" value="@product.Id" />
+                                <div class="form-group mb-0 me-2">
+                                    <input type="number" name="quantity" class="form-control quantity-input" value="1" min="1" max="@product.Stock">
+                                </div>
+                                <button type="submit" class="btn btn-add-to-cart">Ավելացնել զամբյուղ</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p class="text-center">Ապրանքներ չեն գտնվել։</p>
+    }
+</div>
